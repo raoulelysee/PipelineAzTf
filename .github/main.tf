@@ -27,13 +27,13 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
   features {}
 }
-/* 
+ 
 #create MS Azure Provider
 resource "azurerm" {
   skip_provider_registration = "true"
   features {}
 }
- */
+
 
 #create azure resource group
 resource "azurerm_resource_group" "rgp1" {
