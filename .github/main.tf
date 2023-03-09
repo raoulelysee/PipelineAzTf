@@ -80,7 +80,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   resource_group_name = azurerm_resource_group.rgp1.name
   location            = azurerm_resource_group.rgp1.location
   size                = "Standard_F2"
-  admin_username      = "admin1"
+  admin_username      = "owner$of$the$world"
   admin_password      = "Adm$-12%34"
   availability_set_id = azurerm_availability_set.availability
   network_interface_ids = [
