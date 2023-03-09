@@ -58,7 +58,7 @@ resource "azurerm_virtual_network" "virtualnet" {
 
 resource "azurerm_subnet" "subnet" {
   name                     = "subnet"
-  resouresource_group_name = azurerm_resource_group.rgp1.name
+  resource_group_name = azurerm_resource_group.rgp1.name
   address_prefixes         = ["10.0.2.0/24"]
   virtual_network_name     = azurerm_virtual_network.virtualnet.name
 }
@@ -66,7 +66,7 @@ resource "azurerm_subnet" "subnet" {
 resource "azurerm_network_interface" "interface" {
   name                     = "network-interface"
   location                 = azurerm_resource_group.rgp1.location
-  resouresource_group_name = azurerm_resource_group.rgp1.name
+  resource_group_name = azurerm_resource_group.rgp1.name
 
   ip_configuration {
     name                          = "subnet"
@@ -84,7 +84,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   admin_password      = "Adm$-12%34"
   availability_set_id = azurerm_availability_set.availability
   network_interface_ids = [
-    azurerm_network_interface.client_id
+    azurerm_network_interface.interface.id
   ]
   os_disk {
     caching              = "ReadWrite"
