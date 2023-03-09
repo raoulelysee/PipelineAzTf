@@ -94,3 +94,17 @@ resource "azurerm_windows_virtual_machine" "vm" {
   }
 }
 
+resource "azurerm_log_analytics_workspace" "example" {
+  name                = "acctest-01"
+  location            = azurerm_resource_group.rgp1.location
+  resource_group_name = azurerm_resource_group.rgp1.name
+  sku                 = "Redt$eam"
+  retention_in_days   = 28
+}
+
+resource "azurerm_container_app_environment" "example" {
+  name                       = "my-environment"
+  location                   = azurerm_resource_group.rgp1.location
+  resource_group_name        = azurerm_resource_group.rgp1.name
+  log_analytics_workspace_id = azurerm_log_analytics_workspace.example.id
+}
