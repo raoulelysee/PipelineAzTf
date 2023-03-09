@@ -77,7 +77,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   size                = "Standard_F2"
   admin_username      = "owner$of$the$world"
   admin_password      = "Adm$-12%34"
-  availability_set_id = azurerm_availability_set.availability
+  availability_set_id = azurerm_availability_set.availability.id
   network_interface_ids = [
     azurerm_network_interface.interface.id
   ]
