@@ -17,16 +17,11 @@ backend "remote" {
 }
 }
 
-variable "subscription_id" {}
-variable "client_id" {}
-variable "client_secret" {}
-variable "tenant_id" {}
-
 provider "azurerm" {
-  subscription_id = var.subscription_id
-  client_id       = var.client_id
-  client_secret   = var.client_secret
-  tenant_id       = var.tenant_id
+  subscription_id = "99d2d43f-2a4d-4cd7-aacc-039dcbc8df01"
+  client_id       = "4746ad2a-2a4c-49e2-9d6c-b08ebee2e551"
+  client_secret   = "Yug8Q~iDAVUgruMPub0~Wfgo2xQ3qu1AHvsqObE-"
+  tenant_id       = "ac4b9d42-9162-43af-aa5f-8e34aaccf703"
   features {}
 }
  
