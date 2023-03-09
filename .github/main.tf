@@ -8,11 +8,13 @@ terraform {
 }
 
 #terraform cloud config
+terraform {
 backend "remote" {
   organisation = "TerraTest-01"
   workspaces {
     name = "Pipeline_Azure_Terraform"
   }
+}
 }
 
 variable "subscription_id" {}
