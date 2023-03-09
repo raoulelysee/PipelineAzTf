@@ -28,11 +28,11 @@ provider "azurerm" {
   features {}
 }
  
-#create MS Azure Provider
+/* #create MS Azure Provider
 resource "azurerm" {
   skip_provider_registration = "true"
   features {}
-}
+} */
 
 
 #create azure resource group
